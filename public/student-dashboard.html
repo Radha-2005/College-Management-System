@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div>VIIT Pune - Student Dashboard</div>
+    <button class="logout-btn" onclick="fetch('/logout').then(()=>location.href='/')">Logout</button>
+  </header>
+  <div class="container">
+
+    <!-- NAV BOXES -->
+    <div class="nav-boxes">
+      <div class="box" onclick="showSection('attendance')">Attendance</div>
+      <div class="box" onclick="showSection('subjects')">Subjects</div>
+      <div class="box" onclick="showSection('meeting')">Schedule Meeting</div>
+      <div class="box" onclick="showSection('quiz')">Quiz Generator</div>
+    </div>
+
+    <!-- ATTENDANCE -->
+    <div id="attendance" class="section">
+      <h3>My Attendance</h3>
+      <div id="att-list"></div>
+    </div>
+
+    <!-- SUBJECTS -->
+    <div id="subjects" class="section" style="display:none;">
+      <h3>Syllabus</h3>
+      <div id="subjects-list"></div>
+    </div>
+
+    <!-- MEETING -->
+    <div id="meeting" class="section" style="display:none;">
+      <h3>Schedule Meeting</h3>
+      <div id="meeting-form"></div>
+    </div>
+
+    <!-- QUIZ GENERATOR -->
+    <!-- <div id="quiz" class="section" style="display:none;">
+      <h3>Generate Quiz</h3>
+      <div id="quiz-form"></div>
+    </div> -->
+
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="js/student.js"></script>
+  <script>
+    showSection('attendance');
+  </script>
+</body>
+</html>

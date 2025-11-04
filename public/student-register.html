@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Register</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>VIIT, Pune - Student Register</h1>
+  </header>
+  <div class="container">
+    <form onsubmit="return false;">
+      <input id="email" type="email" placeholder="Email" required>
+      <input id="password" type="password" placeholder="Password" required>
+      <input id="prn" type="text" placeholder="PRN (e.g., AIDS001)" required>
+      <input id="division" type="text" placeholder="Division (e.g., A)" required>
+      <input id="roll_no" type="number" placeholder="Roll No" required>
+      <button onclick="register('student')">Register</button>
+    </form>
+  </div>
+  <script src="js/auth.js"></script>
+</body>
+</html>

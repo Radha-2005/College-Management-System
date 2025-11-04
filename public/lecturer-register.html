@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecturer Register</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>VIIT, Pune - Lecturer Register</h1>
+  </header>
+  <div class="container">
+
+    <form onsubmit="return false;">
+      <input id="email" type="email" placeholder="Email" required>
+      <input id="password" type="password" placeholder="Password" required>
+      <input id="employee_id" type="text" placeholder="Employee ID (e.g., LEC001)" required>
+      <button onclick="register('lecturer')">Register</button>
+    </form>
+  </div>
+  <script src="js/auth.js"></script>
+</body>
+</html>

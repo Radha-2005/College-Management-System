@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecturer Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div>VIIT Pune - Lecturer Dashboard</div>
+    <button class="logout-btn" onclick="fetch('/logout').then(()=>location.href='/')">Logout</button>
+  </header>
+  <div class="container">
+
+    <!-- Add Subject -->
+    <div style="background:white;padding:20px;border-radius:12px;margin-bottom:20px;">
+      <h3>Add Subject</h3>
+      <div class="form-group">
+        <input id="sub-name" placeholder="Subject Name">
+        <input id="sub-div" placeholder="Division (e.g., A)">
+        <button onclick="addSubject()">Add Subject</button>
+      </div>
+    </div>
+
+    <!-- Nav Boxes -->
+    <div class="nav-boxes">
+      <div class="box" onclick="showSection('mark-attendance')">Mark Attendance</div>
+      <div class="box" onclick="showSection('subjects')">Subjects</div>
+      <div class="box" onclick="showSection('meetings')">Meeting Details</div>
+    </div>
+
+    <!-- MARK ATTENDANCE -->
+    <div id="mark-attendance" class="section" style="display:none;">
+      <h3>Mark Attendance</h3>
+      <div id="subject-list"></div>
+    </div>
+
+    <!-- SUBJECTS -->
+    <div id="subjects" class="section" style="display:none;">
+      <h3>Your Subjects</h3>
+      <div id="subjects-list"></div>
+      <div id="syllabus-view" style="display:none;"></div>
+    </div>
+
+    <!-- MEETINGS -->
+    <div id="meetings" class="section" style="display:none;">
+      <h3>Meeting Requests</h3>
+      <div id="meetings-list"></div>
+    </div>
+
+  </div>
+  <script src="js/lecturer.js"></script>
+  <script>
+    // Auto-load subjects on start
+    showSection('subjects');
+  </script>
+</body>
+</html>
